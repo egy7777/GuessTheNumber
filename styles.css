@@ -17,6 +17,7 @@ body {
 .container {
     width: 100%;
     max-width: 500px;
+    text-align: center;
 }
 
 .game-card {
@@ -26,6 +27,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .game-card:hover {
@@ -123,6 +125,12 @@ input:focus {
     color: #4a5568;
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+.powered-by {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-top: 1rem;
 }
 
 @keyframes shake {
