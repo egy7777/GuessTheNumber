@@ -87,9 +87,24 @@ class NumberGuessingGame {
     }
 
     playVictoryAnimation() {
-        // Play victory sound
-        this.victorySound.currentTime = 0;
-        this.victorySound.play();
+        // Play victory sound with error handling
+        try {
+            this.victorySound.currentTime = 0;
+            const playPromise = this.victorySound.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        console.log('Audio playback started successfully');
+                    })
+                    .catch(error => {
+                        console.error('Audio playback failed:', error);
+                        // Continue with confetti even if audio fails
+                    });
+            }
+        } catch (error) {
+            console.error('Error setting up audio playback:', error);
+        }
 
         // Confetti animation
         const duration = 3000;
