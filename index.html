@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="game-card">
+            <h1>Number Guessing Game</h1>
+            
+            <div id="range-setup" class="game-section">
+                <h2>Set Your Range</h2>
+                <div class="input-group">
+                    <label for="min-number">Minimum:</label>
+                    <input type="number" id="min-number" value="1" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="max-number">Maximum:</label>
+                    <input type="number" id="max-number" value="100" min="1">
+                </div>
+                <button id="start-game" class="btn primary">Start Game</button>
+            </div>
+
+            <div id="game-play" class="game-section hidden">
+                <h2>Guess the Number</h2>
+                <p class="attempts">Attempts: <span id="attempts">0</span></p>
+                <div class="input-group">
+                    <input type="number" id="guess-input" placeholder="Enter your guess">
+                    <button id="guess-btn" class="btn primary">Guess</button>
+                </div>
+                <p id="message" class="message"></p>
+                <button id="new-game" class="btn secondary">New Game</button>
+            </div>
+        </div>
+    </div>
+    <audio id="victory-sound" src="0409.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html> 
